@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Scriban.Runtime;
+using System;
 using System.Threading.Tasks;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.TextTemplating;
@@ -16,12 +17,15 @@ namespace TextTemplateDemo.Demos.Hello
 
         public async Task RunAsync()
         {
+            var model = new HelloModel
+            {
+                Name = "Johnson Will",
+                Report = new Report { Name = "Mismo1004", SubjectProperty = new SubjectProperty { Name = "HaloGlobal",StreetAddressLine1 ="Newyork 111" } }
+            };
+   
             var result = await _templateRenderer.RenderAsync(
                 "Hello", //the template name
-                new HelloModel
-                {
-                    Name = "John"
-                }
+               model
             );
 
             Console.WriteLine(result);
