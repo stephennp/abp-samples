@@ -19,8 +19,15 @@ namespace TextTemplateDemo.Demos.Hello
         {
             var model = new HelloModel
             {
-                Name = "Johnson Will",
-                Report = new Report { Name = "Mismo1004", SubjectProperty = new SubjectProperty { Name = "HaloGlobal",StreetAddressLine1 ="Newyork 111" } }
+                Name = "Johnson Will !@#$S%^&`'}|,=1<p><\text><nobody></nobody>",
+                Report = new Report { 
+                    Name = "Mismo1004", 
+                    SubjectProperty = new SubjectProperty {
+                        Name = "HaloGlobal",
+                        StreetAddressLine1 ="Newyork 111",
+                        State ="Cali"
+                    }
+                }
             };
    
             var result = await _templateRenderer.RenderAsync(

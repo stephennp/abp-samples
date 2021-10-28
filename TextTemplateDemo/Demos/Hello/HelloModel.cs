@@ -15,6 +15,7 @@
     public class SubjectProperty
     {
         public string Name { get; set; }
+        public string State { get; set; }
         public string StreetAddressLine1 { get; set; }
     }
 }
